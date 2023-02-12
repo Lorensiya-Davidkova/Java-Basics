@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class P01PoolDay {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int people = in.nextInt();
+        double pay = in.nextDouble();
+        double pay_for_chair = in.nextDouble();
+        double pay_for_umbrella = in.nextDouble();
+        double sumEntry = people * pay;
+        int umbrella_counter = people / 2;
+        if (people % 2 != 0) {
+            umbrella_counter = umbrella_counter + 1;
+        }
+        double sum_umbrella = umbrella_counter * pay_for_umbrella;
+        double chair_counter = 0.75 * people;
+        int chair_counter_new = (int) chair_counter;
+        if (chair_counter_new < chair_counter) {
+            chair_counter_new = chair_counter_new + 1;
+        }
+        double sum_chair = chair_counter_new * pay_for_chair;
+        double sum = sumEntry + sum_umbrella + sum_chair;
+        System.out.printf("%.2f lv.", sum);
+    }
+}
