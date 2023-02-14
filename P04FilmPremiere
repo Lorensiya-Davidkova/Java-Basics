@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class P04FilmPremiere {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String name=scanner.nextLine();
+        String packageA=scanner.nextLine();
+        String bileti=scanner.nextLine();
+        int broi_bileti=Integer.parseInt(bileti);
+        double sum=0;
+        if(name.equals("John Wick")){
+            if(packageA.equals("Drink")){
+                sum=broi_bileti*12;
+            }else if(packageA.equals("Popcorn")){
+                sum=broi_bileti*15;
+            }else if(packageA.equals("Menu")){
+                sum=broi_bileti*19;
+            }
+        }
+        if(name.equals("Star Wars")){
+            if(packageA.equals("Drink")){
+                sum=broi_bileti*18;
+            }else if(packageA.equals("Popcorn")){
+                sum=broi_bileti*25;
+            }else if(packageA.equals("Menu")){
+                sum=broi_bileti*30;
+            }
+            if(broi_bileti>=4){
+                sum=sum-0.30*sum;
+            }
+        }
+        if(name.equals("Jumanji")){
+            if(packageA.equals("Drink")){
+                sum=broi_bileti*9;
+            }else if(packageA.equals("Popcorn")){
+                sum=broi_bileti*11;
+            }else if(packageA.equals("Menu")){
+                sum=broi_bileti*14;
+            }
+            if(broi_bileti==2){
+                sum=sum-0.15*sum;
+            }
+        }
+        System.out.printf("Your bill is %.2f leva.",sum);
+    }
+}
