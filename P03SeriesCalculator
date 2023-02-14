@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class P03SeriesCalculator {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        String name=scanner.nextLine();
+        String broi_s=scanner.nextLine();
+        int broi_sezoni=Integer.parseInt(broi_s);
+        String broi_e=scanner.nextLine();
+        int broi_epizodi=Integer.parseInt(broi_e);
+        String epizod_without_r=scanner.nextLine();
+        double epizod_bez_reklami=Double.parseDouble(epizod_without_r);
+        int more_10minutes=broi_sezoni*10;
+        double full_epizod=epizod_bez_reklami+0.20*epizod_bez_reklami;
+        double sum=broi_sezoni*broi_epizodi*full_epizod+more_10minutes;
+        System.out.printf("Total time needed to watch the %s series is %d minutes.",name,(int)sum);
+    }
+}
