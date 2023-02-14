@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class P02FamilyTrip{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        double budjet=in.nextDouble();
+        int broi_noshtuvki=in.nextInt();
+        double cena_noshtuvka=in.nextDouble();
+        int percent=in.nextInt();
+
+        double dopulnitelni_razhodi=(percent/100.0)*budjet;
+
+        double cena_za_vsichki_noshtuvki=broi_noshtuvki*cena_noshtuvka;
+        if(broi_noshtuvki>7){
+            cena_za_vsichki_noshtuvki=cena_za_vsichki_noshtuvki-0.05*cena_za_vsichki_noshtuvki;
+        }
+        double sum=dopulnitelni_razhodi+cena_za_vsichki_noshtuvki;
+        if(sum<=budjet){
+            System.out.printf("Ivanovi will be left with %.2f leva after vacation.",budjet-sum);
+        }else{
+            System.out.printf("%.2f leva needed.",sum-budjet);
+        }
+    }
+}
