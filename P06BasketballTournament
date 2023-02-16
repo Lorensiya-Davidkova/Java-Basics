@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class P06BasketballTournament {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        int counter_win=0;
+        int counter_lose=0;
+        int broi_machocve=0;
+        int sum_broi_machove=0;
+        do{
+            String name_tournament=scanner.nextLine();
+            if(name_tournament.equals("End of tournaments")){
+                System.out.printf("%.2f%c matches win%n",(counter_win/(double)sum_broi_machove)*100,'%');
+                System.out.printf("%.2f%c matches lost%n",(counter_lose/(double)sum_broi_machove)*100,'%');
+                //System.out.printf("%.2f%c matches win.%n",(counter_win/(double)broi_machocve)*100);
+                //System.out.printf("%.2f%c matches lose.%n",(counter_lose/(double)broi_machocve)*100);
+                break;
+            }
+            String broim=scanner.nextLine();
+            broi_machocve=Integer.parseInt(broim);
+            sum_broi_machove=sum_broi_machove+broi_machocve;
+            for(int i=0;i<broi_machocve;i++){
+                String Dpoints=scanner.nextLine();
+                int Desy_points=Integer.parseInt(Dpoints);
+                String Opoints=scanner.nextLine();
+                int other_points=Integer.parseInt(Opoints);
+                if(Desy_points>other_points){
+                    System.out.printf("Game %d of tournament %s: win with %d points.%n",i+1,name_tournament,Desy_points-other_points);
+                    counter_win++;
+                }else if(Desy_points<other_points){
+                    System.out.printf("Game %d of tournament %s: lost with %d points.%n",i+1,name_tournament,other_points-Desy_points);
+                    counter_lose++;
+                }
+            }
+        }while(true);
+    }
+}
