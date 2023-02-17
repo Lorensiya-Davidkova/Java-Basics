@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class P07FitnessCenter {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String broi_h=scanner.nextLine();
+        int broi_hora=Integer.parseInt(broi_h);
+        int Back=0;
+        int Chest=0;
+        int Legs=0;
+        int Abs=0;
+        int Protein_Shake=0;
+        int Protein_bar=0;
+        for(int i=0;i<broi_hora;i++){
+            String choice=scanner.nextLine();
+            if(choice.equals("Back")){
+                Back++;
+            }else if(choice.equals("Chest")){
+                Chest++;
+            }else if(choice.equals("Legs")){
+                Legs++;
+            }else if(choice.equals("Abs")){
+                Abs++;
+            }else if(choice.equals("Protein bar")){
+                Protein_bar++;
+            }else if(choice.equals("Protein shake")){
+                Protein_Shake++;
+            }
+        }
+        System.out.printf("%d - back%n",Back);
+        System.out.printf("%d - chest%n",Chest);
+        System.out.printf("%d - legs%n",Legs);
+        System.out.printf("%d - abs%n",Abs);
+        System.out.printf("%d - protein shake%n",Protein_Shake);
+        System.out.printf("%d - protein bar%n",Protein_bar);
+        double work_out=((double)(broi_hora-(Protein_bar+Protein_Shake))/(double)broi_hora)*100.00;
+        double protein=((Protein_bar+Protein_Shake)/(double)broi_hora)*100;
+        System.out.printf("%.2f%c - work out%n",work_out,'%');
+        System.out.printf("%.2f%c - protein",protein,'%');
+    }
+}
