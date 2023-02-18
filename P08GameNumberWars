@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class P08GameNumberWars {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String name1 = scanner.nextLine();
+        String name2 = scanner.nextLine();
+        int all_points_1 = 0;
+        int all_points_2 = 0;
+        int sum_1 = 0;
+        int sum_2 = 0;
+        do {
+            String points1 = scanner.nextLine();
+            if (points1.equals("End of game")) {
+                System.out.printf("%s has %d points%n", name1, sum_1);
+                System.out.printf("%s has %d points", name2, sum_2);
+                break;
+            }
+            int points_first = Integer.parseInt(points1);
+            String points2 = scanner.nextLine();
+            int points_second = Integer.parseInt(points2);
+            if (points_first > points_second) {
+                all_points_1 = points_first - points_second;
+                sum_1 = sum_1 + all_points_1;
+            } else if (points_second > points_first) {
+                all_points_2 = points_second - points_first;
+                sum_2 = sum_2 + all_points_2;
+            } else if (points_first == points_second) {
+                all_points_1 = 0;
+                all_points_2 = 0;
+                String p_n_w1=scanner.nextLine();
+                int points1_number_wars = Integer.parseInt(p_n_w1);
+                String p_n_w2=scanner.nextLine();
+                int points2_number_wars = Integer.parseInt(p_n_w2);
+                System.out.println("Number wars!");
+                if (points1_number_wars > points2_number_wars) {
+                    System.out.printf("%s is winner with %d points", name1, sum_1);
+                } else if (points2_number_wars > points1_number_wars) {
+                    all_points_2 = points2_number_wars - points1_number_wars;
+                    System.out.printf("%s is winner with %d points", name2, sum_2);
+                }
+                break;
+            }
+        }while(true);
+    }
+}
