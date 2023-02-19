@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class P11TennisEquipment {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        String p_rak=scanner.nextLine();
+        double price_raketa=Double.parseDouble(p_rak);
+        String broi_r=scanner.nextLine();
+        int broi_raketi=Integer.parseInt(broi_r);
+        String broi_m=scanner.nextLine();
+        int broi_maratonki=Integer.parseInt(broi_m);
+        double price_maratonki=price_raketa/6;
+        price_raketa=price_raketa*broi_raketi;
+        price_maratonki=price_maratonki*broi_maratonki;
+        double ostanalo_oborudvane=(price_raketa+price_maratonki)*0.2;
+        double obshto=price_raketa+price_maratonki+ostanalo_oborudvane;
+        int lichno=(int)obshto/8;
+        int sponsor=(int)((obshto*7)/8)+1;
+        System.out.println("Price to be paid by Djokovic "+lichno);
+        System.out.println("Price to be paid by sponsors "+sponsor);
+    }
+}
