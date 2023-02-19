@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class P10Football {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        int pobedi=0;
+        int zagubi=0;
+        int drawn=0;
+        for(int i=0;i<3;i++){
+            String text=scanner.nextLine();
+            int first=Integer.parseInt(String.valueOf(text.charAt(0)));
+            int second=Integer.parseInt(String.valueOf(text.charAt(2)));
+            if(first>second){
+                pobedi++;
+            }else if(first<second){
+                zagubi++;
+            }else if(first==second){
+                drawn++;
+            }
+        }
+        System.out.printf("Team won %d games.%n",pobedi);
+        System.out.printf("Team lost %d games.%n",zagubi);
+        System.out.printf("Drawn games: %d",drawn);
+    }
+}
