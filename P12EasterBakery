@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class P12EasterBakery {
+    public static void main(String[] arsg){
+    Scanner scanner= new Scanner(System.in);
+    String pbra=scanner.nextLine();
+    double price_brashno=Double.parseDouble(pbra);
+    String kgbra=scanner.nextLine();
+    double kg_brashno=Double.parseDouble(kgbra);
+    String kgs=scanner.nextLine();
+    double kg_sugar=Double.parseDouble(kgs);
+    String kqica=scanner.nextLine();
+    int kori_qica=Integer.parseInt(kqica);
+    String packet=scanner.nextLine();
+    int packet_maya=Integer.parseInt(packet);
+    double sugar_price=price_brashno-0.25*price_brashno;
+    double price_kora_qica=price_brashno+0.10*price_brashno;
+    double price_maya=sugar_price-0.80*sugar_price;
+    double suma=kg_brashno*price_brashno+kg_sugar*sugar_price+kori_qica*price_kora_qica+packet_maya*price_maya;
+    System.out.printf("%.2f",suma);
+}
+}
