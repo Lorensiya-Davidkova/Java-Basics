@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class P13EasterShop {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String broiQ=scanner.nextLine();
+        int broi_qica=Integer.parseInt(broiQ);
+        int prodadeni_qica=0;
+        do{
+            String choice=scanner.nextLine();
+            if(choice.equals("Close")){
+                System.out.println("Store is closed!");
+                System.out.printf("%d eggs sold.%n",prodadeni_qica);
+                break;
+            }
+            String nEggs=scanner.nextLine();
+            int new_eggs=Integer.parseInt(nEggs);
+            if(choice.equals("Buy")){
+                if(new_eggs>broi_qica){
+                    System.out.println("Not enough eggs in store!");
+                    System.out.printf("You can buy only %d.%n",broi_qica);
+                    break;
+                }else if(new_eggs<=broi_qica){
+                    prodadeni_qica=prodadeni_qica+new_eggs;
+                    broi_qica=broi_qica-new_eggs;
+                }
+            }else if(choice.equals("Fill")){
+                broi_qica=broi_qica+new_eggs;
+            }
+        }while(true);
+
+    }
+}
