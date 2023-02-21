@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class P14PaintingEggs {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String size=scanner.nextLine();
+        String color=scanner.nextLine();
+        String broi_p=scanner.nextLine();
+        int broi_partidi=Integer.parseInt(broi_p);
+        double sum=0;
+        if(color.equals("Red")){
+            if(size.equals("Large")){
+                sum=16;
+            }else if(size.equals("Medium")){
+                sum=13;
+            }else if(size.equals("Small")){
+                sum=9;
+            }
+        }else if(color.equals("Green")){
+            if(size.equals("Large")){
+                sum=12;
+            }else if(size.equals("Medium")){
+                sum=9;
+            }else if(size.equals("Small")){
+                sum=8;
+            }
+        }else if(color.equals("Yellow")){
+            if(size.equals("Large")){
+                sum=9;
+            }else if(size.equals("Medium")){
+                sum=7;
+            }else if(size.equals("Small")){
+                sum=5;
+            }
+        }
+        sum=sum*broi_partidi;
+        double razhodi=0.35*sum;
+        System.out.printf("%.2f leva.",sum-razhodi);
+    }
+}
