@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class P15EasterGuests {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String guest=scanner.nextLine();
+        int broi_guests=Integer.parseInt(guest);
+        String budjet1=scanner.nextLine();
+        int budjet=Integer.parseInt(budjet1);
+        int broi_kozunaci=0;
+        double new_guest=broi_guests;
+        if(new_guest%3.0==0){
+            broi_kozunaci=broi_guests/3;
+        }else if(new_guest%3.0!=0){
+            broi_kozunaci=(broi_guests/3)+1;
+        }
+        int broi_qica=broi_guests*2;
+        double sum=broi_kozunaci*4+broi_qica*0.45;
+        if(budjet>=sum){
+            System.out.printf("Lyubo bought %d Easter bread and %d eggs.%n",broi_kozunaci,broi_qica);
+            System.out.printf("He has %.2f lv. left.",budjet-sum);
+        }else{
+            System.out.printf("Lyubo doesn't have enough money.%n");
+            System.out.printf("He needs %.2f lv. more.",sum-budjet);
+        }
+    }
+}
