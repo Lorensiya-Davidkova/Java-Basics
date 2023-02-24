@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class P19EasterTrip {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String country=scanner.nextLine();
+        String date=scanner.nextLine();
+        String broiday=scanner.nextLine();
+        int broi_dni=Integer.parseInt(broiday);
+        double cena_noshtuvka=0;
+        if(country.equals("France")){
+            if(date.equals("21-23")){
+                cena_noshtuvka=30;
+            }else if(date.equals("24-27")){
+                cena_noshtuvka=35;
+            }else if(date.equals("28-31")){
+                cena_noshtuvka=40;
+            }
+        }else if(country.equals("Italy")){
+            if(date.equals("21-23")){
+                cena_noshtuvka=28;
+            }else if(date.equals("24-27")){
+                cena_noshtuvka=32;
+            }else if(date.equals("28-31")){
+                cena_noshtuvka=39;
+            }
+        }else if(country.equals("Germany")){
+            if(date.equals("21-23")){
+                cena_noshtuvka=32;
+            }else if(date.equals("24-27")){
+                cena_noshtuvka=37;
+            }else if(date.equals("28-31")){
+                cena_noshtuvka=43;
+            }
+        }
+        double sum=broi_dni*cena_noshtuvka;
+        System.out.printf("Easter trip to %s : %.2f leva.",country,sum);
+    }
+}
