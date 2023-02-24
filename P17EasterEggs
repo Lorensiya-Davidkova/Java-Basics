@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class P17EasterEggs {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String broi_e=scanner.nextLine();
+        int broi_eggs=Integer.parseInt(broi_e);
+        int red=0;
+        int orange=0;
+        int blue=0;
+        int green=0;
+        String color=null;
+        for(int i=0;i<broi_eggs;i++){
+            String choice=scanner.nextLine();
+            if(choice.equals("red")){
+                red++;
+            }else if(choice.equals("orange")){
+                orange++;
+            }else if(choice.equals("blue")){
+                blue++;
+            }else if(choice.equals("green")){
+                green++;
+            }
+        }
+        int[] arr=new int[4];
+        arr[0]=red;
+        arr[1]=orange;
+        arr[2]=blue;
+        arr[3]=green;
+        int max=0;
+        for(int i=0;i<4;i++){
+            if(max<arr[i]){
+                max=arr[i];
+            }
+        }
+        if(max==red){
+            color="red";
+        }else if(max==orange){
+            color="orange";
+        }else if(max==blue){
+            color="blue";
+        }else if(max==green){
+            color="green";
+        }
+        System.out.printf("Red eggs: %d%n",red);
+        System.out.printf("Orange eggs: %d%n",orange);
+        System.out.printf("Blue eggs: %d%n",blue);
+        System.out.printf("Green eggs: %d%n",green);
+        System.out.printf("Max eggs: %d -> %s",max,color);
+    }
+}
