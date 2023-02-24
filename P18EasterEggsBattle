@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class P18EasterEggsBattle {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String one_eggs=scanner.nextLine();
+        int first_qica=Integer.parseInt(one_eggs);
+        String two_eggs=scanner.nextLine();
+        int second_qica=Integer.parseInt(two_eggs);
+        do{
+            String choice=scanner.nextLine();
+            if(choice.equals("one")){
+                second_qica=second_qica-1;
+            }else if(choice.equals("two")){
+                first_qica=first_qica-1;
+            }else if(choice.equals("End")){
+                System.out.printf("Player one has %d eggs left.%n",first_qica);
+                System.out.printf("Player two has %d eggs left.",second_qica);
+                break;
+            }
+            if(first_qica==0){
+                System.out.printf("Player one is out of eggs. Player two has %d eggs left.",second_qica);
+                break;
+            }else if(second_qica==0){
+                System.out.printf("Player two is out of eggs. Player one has %d eggs left.",first_qica);
+                break;
+            }
+        }while(true);
+    }
+}
