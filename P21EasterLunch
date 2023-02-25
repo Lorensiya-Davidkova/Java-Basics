@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class P21EasterLunch {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String broi_k=scanner.nextLine();
+        int broi_kozunaci=Integer.parseInt(broi_k);
+        String broi_q=scanner.nextLine();
+        int broi_kuri_qica=Integer.parseInt(broi_q);
+        String broi_kurab=scanner.nextLine();
+        int kg_kurabii=Integer.parseInt(broi_kurab);
+        double price_kozunaci=broi_kozunaci*3.20;
+        double price_qica=broi_kuri_qica*4.35;
+        double price_kurabii=kg_kurabii*5.40;
+        double price_boi=broi_kuri_qica*12*0.15;
+        double sum=price_kozunaci+price_qica+price_kurabii+price_boi;
+        System.out.printf("%.2f",sum);
+    }
+}
