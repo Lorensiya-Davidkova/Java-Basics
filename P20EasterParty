@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class P20EasterParty {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int broi_gosti=in.nextInt();
+        double kuvert=in.nextDouble();
+        double budjet=in.nextDouble();
+        if((broi_gosti>=10)&&(broi_gosti<=15)){
+            kuvert=kuvert-0.15*kuvert;
+        }else if((broi_gosti>15)&&(broi_gosti<=20)){
+            kuvert=kuvert-0.20*kuvert;
+        }else if(broi_gosti>20){
+            kuvert=kuvert-0.25*kuvert;
+        }
+        double sum_kuverti=broi_gosti*kuvert;
+        double cake=0.10*budjet;
+        double sum=sum_kuverti+cake;
+        if(sum<=budjet){
+            System.out.printf("It is party time! %.2f leva left.",budjet-sum);
+        }else if(sum>budjet){
+            System.out.printf("No party! %.2f leva needed.",sum-budjet);
+        }
+    }
+}
