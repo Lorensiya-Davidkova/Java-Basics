@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class P22ChangeBureau {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        String coin=scanner.nextLine();
+        int coins=Integer.parseInt(coin);
+        String joa=scanner.nextLine();
+        double join=Double.parseDouble(joa);
+        String kom=scanner.nextLine();
+        double komisionna=Double.parseDouble(kom);
+        double sum_euro_without=((join*0.15*1.76)+coins*1168)/1.95;
+        double sum=sum_euro_without-((komisionna*sum_euro_without)/100);
+        System.out.printf("%.2f",sum);
+    }
+}
