@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class P23MountainRun {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String r=scanner.nextLine();
+        double record=Double.parseDouble(r);
+        String s=scanner.nextLine();
+        double razstoqnie=Double.parseDouble(s);
+        String time=scanner.nextLine();
+        double time_per_one_meter=Double.parseDouble(time);
+        double must=razstoqnie*time_per_one_meter;
+        int dopulnitelno=(int)(razstoqnie/50);
+        dopulnitelno=dopulnitelno*30;
+        double sum=must+dopulnitelno;
+        if (sum < record){
+            System.out.printf("Yes! The new record is %.2f seconds.",sum);
+        }else if(sum>= record){
+            System.out.printf("No! He was %.2f seconds slower.",sum-record);
+        }
+
+    }
+}
