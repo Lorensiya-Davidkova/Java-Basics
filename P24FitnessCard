@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class P24FitnessCard {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+
+        String suma=scanner.nextLine();
+        double sum=Double.parseDouble(suma);
+
+        String pola=scanner.nextLine();
+        char pol=pola.charAt(0);
+        String a=scanner.nextLine();
+        int age=Integer.parseInt(a);
+
+        String sport=scanner.nextLine();
+        double must_pay=0;
+        if(pol=='m'){
+            if(sport.equals("Gym")){
+                must_pay=42;
+            }else if(sport.equals("Boxing")){
+                must_pay=41;
+            }else if(sport.equals("Yoga")){
+                must_pay=45;
+            }else if(sport.equals("Zumba")){
+                must_pay=34;
+            }else if(sport.equals("Dances")){
+                must_pay=51;
+            }else if(sport.equals("Pilates")){
+                must_pay=39;
+            }
+        }
+        if(pol=='f') {
+            if (sport.equals("Gym")) {
+                must_pay = 35;
+            } else if (sport.equals("Boxing")) {
+                must_pay = 37;
+            } else if (sport.equals("Yoga")) {
+                must_pay = 42;
+            } else if (sport.equals("Zumba")) {
+                must_pay = 31;
+            } else if (sport.equals("Dances")) {
+                must_pay = 53;
+            } else if (sport.equals("Pilates")) {
+                must_pay = 37;
+            }
+        }
+        if(age<=19){
+            must_pay=must_pay-0.20*must_pay;
+        }
+        if(sum>=must_pay){
+            System.out.printf("You purchased a 1 month pass for %s.",sport);
+        }else{
+            System.out.printf("You don't have enough money! You need $%.2f more.",must_pay-sum);
+        }
+
+    }
+}
