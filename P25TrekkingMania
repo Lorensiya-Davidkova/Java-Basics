@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class P25TrekkingMania {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        int Musala=0;
+        int Monblan=0;
+        int Kili=0;
+        int K=0;
+        int Everest=0;
+        String grup=scanner.nextLine();
+        int broi_grupi=Integer.parseInt(grup);
+        for(int i=0;i<broi_grupi;i++){
+            String hora=scanner.nextLine();
+            int broi_hora=Integer.parseInt(hora);
+            if(broi_hora<=5){
+                Musala=Musala+broi_hora;
+            }else if((broi_hora>=6)&&(broi_hora<=12)){
+                Monblan=Monblan+broi_hora;
+            }else if((broi_hora>=13)&&(broi_hora<=25)){
+                Kili=Kili+broi_hora;
+            }else if((broi_hora>=26)&&(broi_hora<=40)){
+                K=K+broi_hora;
+            }else if(broi_hora>=41){
+                Everest=Everest+broi_hora;
+            }
+        }
+        int sum=Musala+Monblan+Kili+K+Everest;
+        double p_1=Musala/(double)sum;
+        double p_2=Monblan/(double)sum;
+        double p_3=Kili/(double)sum;
+        double p_4=K/(double)sum;
+        double p_5=Everest/(double)sum;
+        System.out.printf("%.2f%c%n",p_1*100,'%');
+        System.out.printf("%.2f%c%n",p_2*100,'%');
+        System.out.printf("%.2f%c%n",p_3*100,'%');
+        System.out.printf("%.2f%c%n",p_4*100,'%');
+        System.out.printf("%.2f%c%n",p_5*100,'%');
+    }
+}
