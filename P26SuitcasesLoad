@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class P26SuitcasesLoad {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String kapacitet=scanner.nextLine();
+        double kapacitet_bagajnik=Double.parseDouble(kapacitet);
+        int counter=0;
+        do{
+            String obem=scanner.nextLine();
+            if(obem.equals("End")){
+                System.out.println("Congratulations! All suitcases are loaded!");
+                break;
+            }
+            double obem_na_kufara=Double.parseDouble(obem);
+            counter++;
+            if(counter%3==0){
+                obem_na_kufara=obem_na_kufara+0.10*obem_na_kufara;
+            }
+            if(kapacitet_bagajnik<obem_na_kufara){
+                counter=counter-1;
+                System.out.println("No more space!");
+                break;
+            }
+            kapacitet_bagajnik=kapacitet_bagajnik-obem_na_kufara;
+        }while(true);
+        System.out.printf("Statistic: %d suitcases loaded.",counter);
+    }
+}
